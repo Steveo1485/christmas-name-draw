@@ -26,4 +26,10 @@ describe ListsController do
       }.to_not change{ List.count }
     end
   end
+
+  it "#show" do
+    list = List.create(item1: "Ninja Turtle")
+    get :show, id: list.id
+    response.status.should eq(200)
+  end
 end
