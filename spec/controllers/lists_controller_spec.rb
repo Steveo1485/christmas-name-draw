@@ -3,6 +3,11 @@ require 'spec_helper'
 describe ListsController do
   let!(:list) { List.new(item1: "Ninja Turtle")}
 
+  it "#index" do
+    get :index
+    response.status.should eq(200)
+  end
+
   it "#new" do
     get :new
     response.status.should eq(200)
