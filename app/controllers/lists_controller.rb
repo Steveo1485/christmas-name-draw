@@ -4,6 +4,7 @@ class ListsController < ApplicationController
   end
 
   def new
+    @new_list = List.new
   end
 
   def create
