@@ -9,11 +9,15 @@ class ListsController < ApplicationController
 
   def create
     list = List.new(params[:list])
-    list.save
-    redirect_to root_path
+    if list.save
+      redirect_to list_path(list.id)
+    else
+      redirect_to new_list_path
+    end
   end
 
   def show
+    @list = List.find(params[:id])
   end
 
 end

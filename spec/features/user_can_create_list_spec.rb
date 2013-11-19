@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "User" do
-  xit "can create a new list", :js => true do
+  it "can create a new list", :js => true do
     visit root_path
     click_link "Create New List"
     fill_in "list_item1", with: "Ninja Turtle"
