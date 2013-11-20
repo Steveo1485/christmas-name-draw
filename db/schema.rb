@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20131120214450) do
   end
 
   create_table "users", :force => true do |t|
-    t.string "name"
+    t.string "first_name"
   end
 
 end
