@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131120220903) do
+ActiveRecord::Schema.define(:version => 20131120221110) do
 
   create_table "lists", :force => true do |t|
     t.integer "user_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20131120220903) do
   create_table "users", :force => true do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "email"
   end
 
 end
