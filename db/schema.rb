@@ -11,11 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131118224942) do
+ActiveRecord::Schema.define(:version => 20131120214450) do
 
   create_table "lists", :force => true do |t|
     t.integer "user_id"
     t.string  "item1"
+    t.string  "item2"
+    t.string  "item3"
+    t.string  "item4"
+    t.string  "item5"
+    t.string  "item6"
+    t.string  "item7"
+    t.string  "item8"
+    t.string  "item9"
+    t.string  "item10"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string "name"
   end
 
 end
