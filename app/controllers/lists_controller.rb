@@ -10,9 +10,9 @@ class ListsController < ApplicationController
   def create
     list = List.new(params[:list])
     if list.save
-      redirect_to list_path(list.id)
+      redirect_to user_list_path(list.user_id, list.id)
     else
-      redirect_to new_list_path
+      redirect_to new_user_list_path
     end
   end
 
