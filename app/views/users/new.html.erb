@@ -14,9 +14,9 @@
 
 <%= form_for @sign_in_user, url: {action: "sign_in"} do |f| %>
 	<%= f.label "Email" %>
-	<%= f.text_field :email %>
+	<%= f.text_field :email, id: "sign_in_email" %>
 	<%= f.label "Password" %>
-	<%= f.password_field :password %>
+	<%= f.password_field :password, id: "sign_in_password" %>
 	<%= f.submit "Sign In"%>
 <% end %>
 
