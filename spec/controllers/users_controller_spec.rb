@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe UsersController do
   let!(:user) { User.new(first_name: "Steven", last_name: "Nugent", email: "steven@steven.com", password: "password")}
-  
+
   it "#index" do
     get :index
     response.status.should eq(200)
