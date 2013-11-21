@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(params[:user])
     if user.save
-      redirect_to users_path
+      redirect_to user_lists_path(user.id)
     else
       redirect_to users_path
     end
