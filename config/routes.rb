@@ -1,7 +1,7 @@
 ChristmasGiftExchange::Application.routes.draw do
-  root :to => 'lists#index'
+  root :to => 'users#new'
 
   resources :users, only: [:index, :new, :create] do
-    resources :list, only: [:index, :new, :create, :show], controller: "lists"
+    resources :lists, only: [:index, :new, :create, :show], controller: "lists"
   end
 end

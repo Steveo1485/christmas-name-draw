@@ -6,7 +6,7 @@ describe ListsController do
 
 
   it "#index" do
-    get :index
+    get :index, user_id: user.id
     response.status.should eq(200)
   end
 
