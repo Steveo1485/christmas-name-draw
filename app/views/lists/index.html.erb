@@ -1,4 +1,8 @@
-<h1>Family Christmas List Name Draw</h1>
-<h2>Welcome, <%= @user.first_name %>!</h2>
+<% if signed_in?(@user) %>
+	<h1>Family Christmas List Name Draw</h1>
+	<h2>Welcome, <%= @user.first_name %>!</h2>
 
-<%= link_to "Create New List", new_user_list_path(@user.id) %>
+	<%= link_to "Create New List", new_user_list_path(@user.id) %>
+<% else %>
+	<h1>Ho! Ho! Ho! You need to be signed in to see this!</h1>
+<% end %>
