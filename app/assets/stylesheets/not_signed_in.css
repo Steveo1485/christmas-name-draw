@@ -1,0 +1,23 @@
+h1#not_signed_in_top {
+	font-family: 'Lily Script One', cursive;
+	color: #c0392b;
+	font-size: 4em;
+	text-align: center;
+	margin: 0;
+}
+
+h2#not_signed_in_bottom {
+	font-family: 'Lily Script One', cursive;
+	color: #27ae60;
+	font-size: 2.5em;
+	text-align: center;
+	margin-top: 2px;
+}
+
+p.return_home {
+	text-align: center;
+}
+
+p.return_home a {
+	color: #c0392b;
+}
