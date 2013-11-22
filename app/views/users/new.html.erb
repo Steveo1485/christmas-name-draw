@@ -17,6 +17,7 @@
 			<%= f.password_field :password, class: "form_field"  %><br/>
 			<%= f.submit "Sign Up", class: "form_button"%>
 		<% end %>
+		<span class="error_flash"><%= flash[:sign_up_error] %></span>
 	</div>
 
 	<div id="sign_up">
@@ -29,5 +30,6 @@
 			<%= f.password_field :password, class: "form_field", id: "sign_in_password" %><br/>
 			<%= f.submit "Sign In", class: "form_button"%>
 		<% end %>
+		<span class="error_flash"><%= flash[:sign_in_error] %></span>
 	</div>
 </div>

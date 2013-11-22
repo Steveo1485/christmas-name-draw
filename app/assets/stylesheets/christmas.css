@@ -31,7 +31,7 @@ div#sign_in {
 	padding: 2px;
 	display: inline-block;
 	min-width: 25%;
-	min-height: 255px;
+	min-height: 275px;
 	float: left;
 	margin: 1%;
 	margin-left: 20%;
@@ -46,7 +46,7 @@ div#sign_up {
 	padding: 2px;
 	display: inline-block;
 	min-width: 25%;
-	min-height: 255px;
+	min-height: 275px;
 	float: right;
 	margin: 1%;
 	margin-right: 20%;
@@ -73,5 +73,11 @@ input.form_field {
 
 label {
 	float: left;
+	margin-left: 5%;
+}
+
+.error_flash {
+	font-family: 'Lily Script One', cursive;
+	color: #c0392b;
 	margin-left: 5%;
 }
