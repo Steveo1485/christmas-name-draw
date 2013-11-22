@@ -7,27 +7,29 @@
 		<h3 class="sign_up_sign_in">Sign Up</h1>
 
 		<%= form_for @new_user do |f| %>
-			<%= f.label "First Name" %>
+			<%= f.label "First Name" %><br/>
 			<%= f.text_field :first_name, class: "form_field" %><br/>
-			<%= f.label "Last Name" %>
+			<%= f.label "Last Name" %><br/>
 			<%= f.text_field :last_name, class: "form_field"  %><br/>
-			<%= f.label "Email" %>
+			<%= f.label "Email" %><br/>
 			<%= f.text_field :email, class: "form_field"  %><br/>
-			<%= f.label "Password" %>
+			<%= f.label "Password" %><br/>
 			<%= f.password_field :password, class: "form_field"  %><br/>
 			<%= f.submit "Sign Up", class: "form_button"%>
 		<% end %>
+		<span class="error_flash"><%= flash[:sign_up_error] %></span>
 	</div>
 
 	<div id="sign_up">
 		<h3 class="sign_up_sign_in">Sign In</h1>
 
 		<%= form_for @sign_in_user, url: {action: "sign_in"} do |f| %>
-			<%= f.label "Email" %>
+			<%= f.label "Email" %><br/>
 			<%= f.text_field :email, class: "form_field", id: "sign_in_email" %><br/>
-			<%= f.label "Password" %>
+			<%= f.label "Password" %><br/>
 			<%= f.password_field :password, class: "form_field", id: "sign_in_password" %><br/>
 			<%= f.submit "Sign In", class: "form_button"%>
 		<% end %>
+		<span class="error_flash"><%= flash[:sign_in_error] %></span>
 	</div>
 </div>

@@ -13,7 +13,8 @@ class UsersController < ApplicationController
     if user.save
       redirect_to user_lists_path(user.id)
     else
-      redirect_to users_path
+      flash[:sign_up_error] = user.errors.full_messages.join(', ')
+      redirect_to root_path
     end
   end
 
@@ -23,7 +24,8 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to user_lists_path(user.id)
     else
-      redirect_to users_path
+      flash[:sign_in_error] = "Please try again."
+      redirect_to root_path
     end
   end
 end
