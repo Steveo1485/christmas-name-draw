@@ -31,7 +31,7 @@ div#sign_in {
 	padding: 2px;
 	display: inline-block;
 	min-width: 25%;
-	min-height: 150px;
+	min-height: 255px;
 	float: left;
 	margin: 1%;
 	margin-left: 20%;
@@ -46,7 +46,7 @@ div#sign_up {
 	padding: 2px;
 	display: inline-block;
 	min-width: 25%;
-	min-height: 150px;
+	min-height: 255px;
 	float: right;
 	margin: 1%;
 	margin-right: 20%;
@@ -61,18 +61,17 @@ h3.sign_up_sign_in {
 	margin: 0;
 }
 
-form#new_user {
-	font-family: 'Raleway', sans-serif;
-	margin: 5px;
+form {
+	margin-top: 3%;
+	font-family: 'Lily Script One', cursive;
+	text-align: center;
 }
 
-label{
-    float: left;
-}
 input.form_field {
-	float: right;
+	width: 80%;
 }
 
-input.form_button {
-	margin-top: 5%;
+label {
+	float: left;
+	margin-left: 5%;
 }
