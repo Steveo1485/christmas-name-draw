@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131120222152) do
+ActiveRecord::Schema.define(:version => 20131123202545) do
+
+  create_table "items", :force => true do |t|
+    t.integer "list_id"
+    t.string  "item"
+  end
 
   create_table "lists", :force => true do |t|
     t.integer "user_id"
