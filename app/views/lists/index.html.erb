@@ -2,7 +2,26 @@
 	<h1>Family Christmas List Name Draw</h1>
 	<h2>Welcome, <%= @user.first_name %>!</h2>
 
-	<p><%= link_to "Create New List", new_user_list_path(@user.id) %></p>
+	<% if @user.list %>
+		<h3>Your Christmas List</h3>
+		<ul>
+			<li><%= @list.item1 %></li>
+			<li><%= @list.item2 %></li>
+			<li><%= @list.item3 %></li>
+			<li><%= @list.item4 %></li>
+			<li><%= @list.item5 %></li>
+			<li><%= @list.item6 %></li>
+			<li><%= @list.item7 %></li>
+			<li><%= @list.item8 %></li>
+			<li><%= @list.item9 %></li>
+			<li><%= @list.item10 %></li>
+		</ul>
+
+	<% else %>
+		<%= link_to "Create New List", new_user_list_path(@user.id) %>
+	<% end %>
+
+
 <% else %>
 	<h1 id="not_signed_in_top">Ho! Ho! Ho!</h1>
 	<h2 id="not_signed_in_bottom">You need to be signed in to see this!</h2>
