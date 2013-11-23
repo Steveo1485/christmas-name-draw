@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "User" do
   let!(:user) { User.create(first_name: "Steven", last_name: "Nugent", email: "steven@steven.com", password: "password")}
   
-  it "can sign up" do
+  xit "can sign up" do
     visit root_path
     fill_in "user_first_name", with: "Stephanie"
     fill_in "user_last_name", with: "King"
@@ -13,7 +13,7 @@ describe "User" do
     expect(page).to have_content("Welcome, Stephanie!")
   end
 
-  it "can create a new list" do
+  xit "can create a new list" do
     visit user_lists_path(user.id)
     click_link "Create New List"
     fill_in "list_item1", with: "Ninja Turtle"

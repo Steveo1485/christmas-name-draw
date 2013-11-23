@@ -1,5 +1,5 @@
 class List < ActiveRecord::Base
-  attr_accessible :user_id, :item1
+  attr_accessible :user_id
   belongs_to :user
-  validates_presence_of :item1
+  has_many :items
 end
