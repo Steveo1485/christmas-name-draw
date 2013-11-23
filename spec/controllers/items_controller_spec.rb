@@ -11,9 +11,9 @@ describe ItemsController do
       }.to change{ Item.count }.by(1)
     end
 
-    xit "does not create a new list with invalid params" do
+    it "does not create a new list with invalid params" do
       expect {
-        post :create, user_id: user.id, list: { item1: "" }
+        post :create, user_id: user.id, list_id: list.id, item: { item: "" }
       }.to_not change{ List.count }
     end
   end
