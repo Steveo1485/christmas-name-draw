@@ -2,6 +2,7 @@ class ListsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
+    @list = List.find_by_user_id(@user.id)
   end
 
   def new
