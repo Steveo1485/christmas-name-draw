@@ -4,11 +4,6 @@ describe UsersController do
   let!(:user) { User.new(first_name: "Steven", last_name: "Nugent", email: "steven@steven.com", password: "password")}
   let!(:valid_user) { User.new(first_name: "Derek", last_name: "Dragseth", email: "derek@derek.com", password: "password")}
 
-  it "#index" do
-    get :index
-    response.status.should eq(200)
-  end
-
   it "#new" do
     get :new
     response.status.should eq(200)
