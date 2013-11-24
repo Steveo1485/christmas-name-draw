@@ -14,10 +14,15 @@ h2#not_signed_in_bottom {
 	margin-top: 2px;
 }
 
-p.return_home {
+p.links {
 	text-align: center;
 }
 
-p.return_home a {
+p.links a {
 	color: #c0392b;
+}
+
+a.links {
+	color: #ecf0f1;
+	font-size: .75em;
 }
