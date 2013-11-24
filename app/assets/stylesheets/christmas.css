@@ -28,13 +28,12 @@ h2#countdown {
 div#sign_in {
 	background-color: #7DB8E5;
 	border-radius: 10px;
-	padding: 2px;
 	display: inline-block;
-	min-width: 25%;
-	min-height: 275px;
 	float: left;
-	margin: 1%;
-	margin-left: 20%;
+	min-width: 30%;
+	min-height: 275px;
+	margin-left: 10%;
+	margin-right: 10%;
 	box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
 	-moz-box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
 	-webkit-box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
@@ -43,13 +42,12 @@ div#sign_in {
 div#sign_up {
 	background-color: #7DB8E5;
 	border-radius: 10px;
-	padding: 2px;
 	display: inline-block;
-	min-width: 25%;
-	min-height: 275px;
 	float: right;
-	margin: 1%;
-	margin-right: 20%;
+	min-width: 30%;
+	min-height: 275px;
+	margin-left: 10%;
+	margin-right: 10%;
 	box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
 	-moz-box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
 	-webkit-box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
@@ -59,6 +57,7 @@ h3.sign_up_sign_in {
 	font-family: 'Lily Script One', cursive;
 	text-align: center;
 	margin: 0;
+	margin-top: .4em;
 }
 
 form {
