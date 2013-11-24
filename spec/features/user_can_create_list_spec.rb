@@ -13,7 +13,16 @@ describe "User" do
     expect(page).to have_content("Welcome, Stephanie!")
   end
 
+  it "can log in" do
+    visit root_path
+    fill_in "sign_in_email", with: "steven@steven.com"
+    fill_in "sign_in_password", with: "password"
+    click_button("Sign In")
+    expect(page).to have_content("Welcome, Steven!")
+  end
+
   xit "can create a new list" do
+    session[:user_id] = user.id
     visit user_lists_path(user.id)
     click_link "Create New List"
     fill_in "list_item1", with: "Ninja Turtle"
