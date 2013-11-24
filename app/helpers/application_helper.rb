@@ -8,4 +8,9 @@ module ApplicationHelper
   def signed_in?(user)
     session[:user_id] == user.id
   end
+
+  def paired_with(user)
+    paired_list = List.find(user.paired_list_id)
+    User.find(paired_list.user_id)
+  end
 end
