@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "User" do
-  let!(:user) { User.create(first_name: "Steven", last_name: "Nugent", email: "steven@steven.com", password: "password")}
+  let!(:user) { User.create(first_name: "Steven", last_name: "Nugent", email: "steven@steven.com", password: "password", family_group: "Nugent/Lim/Saito")}
   
   it "can sign up" do
     visit root_path
@@ -9,6 +9,7 @@ describe "User" do
     fill_in "user_last_name", with: "King"
     fill_in "user_email", with: "stephanie@stephanie.com"
     fill_in "user_password", with: "password"
+    select("King", from: "user_family_group")
     click_button("Sign Up")
     expect(page).to have_content("Welcome, Stephanie!")
   end
