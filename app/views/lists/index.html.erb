@@ -24,6 +24,8 @@
 		<%= link_to "Create Christmas List", {controller: "lists", action: "create" }, method: "post" %>
 	<% end %>
 
+	<%= link_to "Sign Out", {controller: "users", action: "sign_out"}, method: "post" %>
+
 <% else %>
 	<h1 id="not_signed_in_top">Ho! Ho! Ho!</h1>
 	<h2 id="not_signed_in_bottom">You need to be signed in to see this!</h2>
