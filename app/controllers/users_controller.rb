@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(params[:user])
     if user.save
+      session[:user_id] = user.id
       redirect_to user_lists_path(user.id)
     else
       flash[:sign_up_error] = user.errors.full_messages.join(', ')
