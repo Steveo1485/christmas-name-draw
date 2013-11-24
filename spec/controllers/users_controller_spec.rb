@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe UsersController do
-  let!(:user) { User.new(first_name: "Steven", last_name: "Nugent", email: "steven@steven.com", password: "password")}
-  let!(:valid_user) { User.new(first_name: "Derek", last_name: "Dragseth", email: "derek@derek.com", password: "password")}
+  let!(:user) { User.new(first_name: "Steven", last_name: "Nugent", email: "steven@steven.com", password: "password", family_group: "Nugent/Lim/Saito")}
+  let!(:valid_user) { User.new(first_name: "Derek", last_name: "Dragseth", email: "derek@derek.com", password: "password", family_group: "Dragseth")}
 
   it "#new" do
     get :new
@@ -15,7 +15,8 @@ describe UsersController do
         post :create, user: { first_name: user.first_name,
                               last_name: user.last_name,
                               email: user.email,
-                              password: user.password}
+                              password: user.password,
+                              family_group: user.family_group}
       }.to change{ User.count }.by(1)
     end
 

@@ -15,6 +15,8 @@
 			<%= f.text_field :email, class: "form_field"  %><br/>
 			<%= f.label "Password" %><br/>
 			<%= f.password_field :password, class: "form_field"  %><br/>
+			<%= f.label "Family Group" %><br/>
+			<%= f.select :family_group, ['Dragseth', 'King', 'Nugent/Lim/Saito'] %><br/>
 			<%= f.submit "Sign Up", class: "form_button"%>
 		<% end %>
 		<span class="error_flash"><%= flash[:sign_up_error] %></span>
