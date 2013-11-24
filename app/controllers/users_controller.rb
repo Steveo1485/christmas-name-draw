@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def new
+    redirect_to user_lists_path(session[:user_id]) if session[:user_id]
     @new_user = User.new
     @sign_in_user = User.new
   end
