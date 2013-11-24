@@ -7,7 +7,18 @@
 	<h3>Your List</h3>
 
 	<% if @user.list %>
-		<h4>List Here</h4>
+		<ul>
+		<% @user.list.items.each do |item| %>
+			<li> <%= item.item %></li>
+		<% end %>
+		</ul>
+
+		<%= form_for [@user, @list, @item], url: user_list_items_path(@user.id, @list.id) do |f| %>
+			<%= f.label "Item" %>
+			<%= f.text_field :item %>
+			<%= f.submit "Add Item" %>
+		<% end %>
+
 	<% else %>
 		<%= link_to "Create New List", {controller: "lists", action: "create" }, method: "post" %>
 	<% end %>
