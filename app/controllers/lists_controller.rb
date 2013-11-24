@@ -6,11 +6,6 @@ class ListsController < ApplicationController
     @item = Item.new
   end
 
-  def new
-    @user = User.find(params[:user_id])
-    @new_list = List.new
-  end
-
   def create
     user = User.find(params[:user_id])
     list = List.new(params[:list])

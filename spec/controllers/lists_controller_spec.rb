@@ -10,11 +10,6 @@ describe ListsController do
     response.status.should eq(200)
   end
 
-  it "#new" do
-    get :new, user_id: user.id
-    response.status.should eq(200)
-  end
-
   it "creates a new list with valid params" do
     expect {
       post :create, user_id: user.id, list: { user_id: user.id }
