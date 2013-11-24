@@ -40,4 +40,9 @@ describe UsersController do
       expect(session[:user_id]).to eq(nil)
     end
   end
+
+  it "#sign_out" do
+    post :sign_out, id: user.id
+    expect(session[:user_id]).to eq(nil)
+  end
 end
