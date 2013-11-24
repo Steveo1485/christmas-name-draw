@@ -16,9 +16,4 @@ describe ListsController do
     }.to change{ List.count }.by(1)
   end
 
-  it "#show" do
-    list = List.create(user_id: user.id)
-    get :show, user_id: user.id, id: list.id
-    response.status.should eq(200)
-  end
 end

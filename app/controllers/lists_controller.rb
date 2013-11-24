@@ -17,9 +17,4 @@ class ListsController < ApplicationController
     end
   end
 
-  def show
-    @list = List.find(params[:id])
-    @user = User.find(params[:user_id])
-  end
-
 end
