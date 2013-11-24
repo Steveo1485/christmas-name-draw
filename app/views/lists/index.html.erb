@@ -9,7 +9,7 @@
 	<% if @user.list %>
 		<ul>
 		<% @user.list.items.each do |item| %>
-			<li> <%= item.item %></li>
+			<li> <%= item.item %> - <%= link_to "Remove from list", user_list_item_path(@user.id, @user.list.id, item.id), method: "delete" %></li>
 		<% end %>
 		</ul>
 
