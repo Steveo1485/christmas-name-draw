@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "User" do
   let!(:user) { User.create(first_name: "Steven", last_name: "Nugent", email: "steven@steven.com", password: "password")}
   
-  xit "can sign up" do
+  it "can sign up" do
     visit root_path
     fill_in "user_first_name", with: "Stephanie"
     fill_in "user_last_name", with: "King"
