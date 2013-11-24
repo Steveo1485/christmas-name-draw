@@ -1,31 +1,40 @@
-<% if signed_in?(@user) %>
-	<h1>Family Christmas List Name Draw</h1>
-	<h2>Welcome, <%= @user.first_name %>!</h2>
+<div class="container">
+	<% if signed_in?(@user) %>
+		<h1 class="main-title">Welcome, <%= @user.first_name.capitalize %>!</h1>
 
-	<h3>X's List</h3>
+		
+		<div class="lists">
+			<h2 class="list-title">X's List</h2>
+			<h4 class="list-placeholder">Not Paired Yet</h4>
+		</div>
 
-	<h3>Your List</h3>
+		<div class="lists">
+			<h2 class="list-title">Your List</h2>
 
-	<% if @user.list %>
-		<ul>
-		<% @user.list.items.each do |item| %>
-			<li> <%= item.item %> - <%= link_to "Remove from list", user_list_item_path(@user.id, @user.list.id, item.id), method: "delete" %></li>
-		<% end %>
-		</ul>
+			<% if @user.list %>
+				<ul class="christmas-list">
+				<% @user.list.items.each do |item| %>
+					<li> <%= item.item %> <%= link_to "Remove from list", user_list_item_path(@user.id, @user.list.id, item.id), method: "delete", class: "links", data: { confirm: "Remove #{item.item} from your list?" } %></li>
+				<% end %>
+				</ul>
 
-		<%= form_for [@user, @list, @item], url: user_list_items_path(@user.id, @list.id) do |f| %>
-			<%= f.label "Item" %>
-			<%= f.text_field :item %>
-			<%= f.submit "Add Item" %>
-		<% end %>
-		<%= flash[:add_item_error] %>
+				<%= form_for [@user, @list, @item], url: user_list_items_path(@user.id, @list.id) do |f| %>
+					<%= f.text_field :item %>
+					<%= f.submit "Add Item" %>
+				<% end %>
+				<%= flash[:add_item_error] %>
+
+			<% else %>
+				<p class="create-list"><%= link_to "Create Christmas List", {controller: "lists", action: "create" }, method: "post" %></p>
+			<% end %>
+		</div>
+
+
+		<p class="links"><%= link_to "Sign Out", {controller: "users", action: "sign_out"}, method: "post" %></p>
 
 	<% else %>
-		<%= link_to "Create Christmas List", {controller: "lists", action: "create" }, method: "post" %>
+		<h1 id="not_signed_in_top">Ho! Ho! Ho!</h1>
+		<h2 id="not_signed_in_bottom">You need to be signed in to see this!</h2>
+		<p class="links"><%= link_to "Return Home", root_path%></p>
 	<% end %>
-
-<% else %>
-	<h1 id="not_signed_in_top">Ho! Ho! Ho!</h1>
-	<h2 id="not_signed_in_bottom">You need to be signed in to see this!</h2>
-	<p class="return_home"><%= link_to "Return Home", root_path %></p>
-<% end %>
+</div>

@@ -9,7 +9,7 @@ describe "User" do
     fill_in "sign_in_password", with: user.password
     click_button("Sign In")
     click_link "Create Christmas List"
-    expect(page).to have_content("Item")
+    expect(page).to have_button("Add Item")
   end
 
   it "can add item to list" do

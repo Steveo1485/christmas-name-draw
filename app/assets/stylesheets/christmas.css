@@ -8,7 +8,7 @@ body {
 	font-size: 16px;
 }
 
-h1#main-logo {
+h1.main-title {
 	font-family: 'Lily Script One', cursive;
 	color: #c0392b;
 	font-size: 4em;
@@ -80,4 +80,43 @@ label {
 	font-family: 'Lily Script One', cursive;
 	color: #c0392b;
 	margin-left: 5%;
+}
+
+.lists {
+	background-color: #27ae60;	
+	border-radius: 10px;
+	padding: 2px;
+	width: 75%;
+	min-height: 145px;
+	margin-top: 2%;
+	margin-right: auto;
+	margin-bottom: 2%;
+	margin-left: auto;
+	display: block;
+	box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
+	-moz-box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
+	-webkit-box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
+}
+
+h2.list-title {
+	font-family: 'Lily Script One', cursive;
+	text-align: center;
+}
+
+
+h4.list-placeholder {
+	text-align: center;
+}
+
+ul.christmas-list {
+	list-style-type: none;
+}
+
+p.create-list {
+	text-align: center;
+}
+
+p.create-list a {
+	color: #ecf0f1;
+	font-size: 1.5em;
 }
