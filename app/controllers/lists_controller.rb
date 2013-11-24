@@ -6,11 +6,6 @@ class ListsController < ApplicationController
     @item = Item.new
   end
 
-  def new
-    @user = User.find(params[:user_id])
-    @new_list = List.new
-  end
-
   def create
     user = User.find(params[:user_id])
     list = List.new(params[:list])
@@ -20,11 +15,6 @@ class ListsController < ApplicationController
     else
       redirect_to new_user_list_path
     end
-  end
-
-  def show
-    @list = List.find(params[:id])
-    @user = User.find(params[:user_id])
   end
 
 end

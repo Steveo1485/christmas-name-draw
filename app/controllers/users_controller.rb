@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
 
-  def index
-  end
-
   def new
     @new_user = User.new
     @sign_in_user = User.new
