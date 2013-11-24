@@ -13,4 +13,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    user = User.find(params[:user_id])
+    list = List.find(params[:list_id])
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to user_lists_path(user.id, list.id)
+  end
+
 end
