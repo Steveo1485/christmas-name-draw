@@ -70,6 +70,10 @@ input.form_field {
 	width: 80%;
 }
 
+input#item_item {
+	width: 75%;
+}
+
 label {
 	float: left;
 	margin-left: 5%;
