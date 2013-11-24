@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
     if item.save
       redirect_to user_lists_path(user.id, list.id)
     else
+      flash[:add_item_error] = item.errors.full_messages.join(', ')
       redirect_to user_lists_path(user.id, list.id)
     end
   end

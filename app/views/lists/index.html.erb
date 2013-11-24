@@ -18,6 +18,7 @@
 			<%= f.text_field :item %>
 			<%= f.submit "Add Item" %>
 		<% end %>
+		<%= flash[:add_item_error] %>
 
 	<% else %>
 		<%= link_to "Create New List", {controller: "lists", action: "create" }, method: "post" %>
