@@ -30,7 +30,7 @@ namespace :pairing do
     User.all.each do |user|
       paired_list = List.find(user.paired_list_id)
       paired_user = User.find(paired_list.user_id)
-      puts "#{user.first_name} paired with #{paired_user.first_name}"
+      puts "#{user.first_name} given #{paired_user.first_name}'s list"
     end
   end
 

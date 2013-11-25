@@ -4,8 +4,22 @@
 
 		
 		<div class="lists">
-			<h2 class="list-title">Paired With Here</h2>
-			<h4 class="list-placeholder">ADD PAIRED LIST HERE</h4>
+			<% if paired?(@user) %>
+				<h2 class="list-title"><%= "#{paired_with(@user)}'s List" %></h2>
+
+				<% if any_items?(paired_with_list(@user)) %>
+					<ul class="christmas-list">
+						<% paired_with_list(@user).items.each do |item| %>
+							<li><%= item.item %></li>
+						<% end %>
+					</ul>
+				<% else %>
+					<h2 class="list-title">No items added yet.</h2>
+				<% end %>
+
+			<% else %>
+				<h2 class="list-title">Sorry, Not Paired Yet</h2>
+			<% end %>
 		</div>
 
 		<div class="lists">

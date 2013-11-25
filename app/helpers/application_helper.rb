@@ -11,6 +11,19 @@ module ApplicationHelper
 
   def paired_with(user)
     paired_list = List.find(user.paired_list_id)
-    User.find(paired_list.user_id)
+    User.find(paired_list.user_id).first_name
   end
+
+  def paired?(user)
+    user.paired_list_id != nil
+  end
+
+  def paired_with_list(user)
+    paired_list = List.find(user.paired_list_id)
+  end
+
+  def any_items?(list)
+    list.items.count != 0
+  end
+
 end
