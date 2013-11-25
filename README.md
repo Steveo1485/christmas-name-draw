@@ -8,6 +8,6 @@ App that allows family to draw random names for Christmas shopping.
 * User is randomly assigned another user's Christmas list to shop for
 
 # Next Steps
-* Look into pairing rake task - doesn't work every time
+* Look into pairing rake task
 * Refactor views
 * Push to Heroku
