@@ -4,12 +4,12 @@
 
 		
 		<div class="lists">
-			<% if paired?(@user) %>
-				<h2 class="list-title"><%= "#{paired_with(@user)}'s List" %></h2>
+			<% if @user.paired? %>
+				<h2 class="list-title"><%= "#{@user.paired_with}'s List" %></h2>
 
-				<% if any_items?(paired_with_list(@user)) %>
+				<% if @user.paired_with_list.any_items? %>
 					<ul class="christmas-list">
-						<% paired_with_list(@user).items.each do |item| %>
+						<% @user.paired_with_list.items.each do |item| %>
 							<li><%= item.item %></li>
 						<% end %>
 					</ul>
