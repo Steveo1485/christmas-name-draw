@@ -2,46 +2,10 @@
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
 
-	div#sign_in {
-		background-color: #7DB8E5;
-		border-radius: 10px;
-		display: inline-block;
-		min-width: 80%;
-		min-height: 275px;
-		margin-left: 10%;
-		margin-right: 10%;
-		margin-bottom: 10%;
-		box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
-		-moz-box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
-		-webkit-box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
-	}
+	div#sign_in { min-width: 80%;
+				  margin-bottom: 10% }
 
-	div#sign_up {
-		background-color: #7DB8E5;
-		border-radius: 10px;
-		display: inline-block;
-		min-width: 80%;
-		min-height: 275px;
-		margin-left: 10%;
-		margin-right: 10%;
-		box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
-		-moz-box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
-		-webkit-box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
-	}
+	div#sign_up { min-width: 80%; }
 
-	.lists {
-		background-color: #27ae60;	
-		border-radius: 10px;
-		padding: 2px;
-		width: 80%;
-		min-height: 145px;
-		margin-top: 2%;
-		margin-right: auto;
-		margin-bottom: 2%;
-		margin-left: auto;
-		display: block;
-		box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
-		-moz-box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
-		-webkit-box-shadow: 0px 0px 10px 2px rgba(151, 151, 151, 0.6);
-	}
+	.lists { width: 80%; }
 }
