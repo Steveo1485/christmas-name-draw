@@ -43,7 +43,7 @@
 			<% end %>
 		</div>
 
-
+		<p class="links"><%= link_to "Update Info", user_path(@user.id)%></p>
 		<p class="links"><%= link_to "Sign Out", {controller: "users", action: "sign_out"}, method: "post" %></p>
 
 	<% else %>

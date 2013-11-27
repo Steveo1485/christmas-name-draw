@@ -33,5 +33,19 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     redirect_to root_path
   end
+
+  def update
+    user = User.find(params[:id])
+    if user.update_attributes(params[:user])
+      redirect_to root_path
+    else
+      flash[:update_error] = user.errors.full_messages.join(', ')
+      redirect_to user_path(user.id)
+    end
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
 end
 
