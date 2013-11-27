@@ -1,13 +1,22 @@
-<h1>Update User Info</h1>
+<% if signed_in?(@user) %>
+	<h1 class="main-title">Update Info</h1>
 
-<%= form_for @user, url: user_path, method: :put do |f| %>
-	<%= f.label "First Name" %><br/>
-	<%= f.text_field :first_name, class: "form_field" %><br/>
-	<%= f.label "Last Name" %><br/>
-	<%= f.text_field :last_name, class: "form_field"  %><br/>
-	<%= f.label "Email" %><br/>
-	<%= f.text_field :email, class: "form_field"  %><br/>
-	<%= f.label "Family Group" %><br/>
-	<%= f.select :family_group, ['Dragseth', 'King', 'Nugent/Lim/Saito'] %><br/>
-	<%= f.submit "Update Info", class: "form_button"%>
+	<div class="lists">
+		<%= form_for @user, url: user_path, method: :put do |f| %>
+			<%= f.label "First Name" %><br/>
+			<%= f.text_field :first_name, class: "form_field" %><br/>
+			<%= f.label "Last Name" %><br/>
+			<%= f.text_field :last_name, class: "form_field"  %><br/>
+			<%= f.label "Email" %><br/>
+			<%= f.text_field :email, class: "form_field"  %><br/>
+			<%= f.label "Family Group" %><br/>
+			<%= f.select :family_group, ['Dragseth', 'King', 'Nugent/Lim/Saito'] %><br/>
+			<%= f.submit "Update Info", class: "form_button"%>
+		<% end %>
+	</div>
+	<p class="links"><%= link_to "Back To Lists", user_lists_path(@user.id)%></p>
+<% else %>
+	<h1 id="not_signed_in_top">Ho! Ho! Ho!</h1>
+	<h2 id="not_signed_in_bottom">You need to be signed in to see this!</h2>
+	<p class="links"><%= link_to "Return Home", root_path%></p>
 <% end %>
