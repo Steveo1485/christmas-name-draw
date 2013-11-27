@@ -16,6 +16,7 @@ describe "User" do
 
   it "can log in" do
     visit root_path
+    fill_in "sign_in_first_name", with: user.first_name
     fill_in "sign_in_email", with: user.email
     fill_in "sign_in_password", with: user.password
     click_button("Sign In")
@@ -24,6 +25,7 @@ describe "User" do
 
   it "should redirect root path if previously signed in" do
     visit root_path
+    fill_in "sign_in_first_name", with: user.first_name
     fill_in "sign_in_email", with: user.email
     fill_in "sign_in_password", with: user.password
     click_button("Sign In")

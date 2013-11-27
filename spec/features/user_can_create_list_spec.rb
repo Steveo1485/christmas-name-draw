@@ -5,6 +5,7 @@ describe "User" do
   
   it "can create a new list" do
     visit root_path
+    fill_in "sign_in_first_name", with: user.first_name
     fill_in "sign_in_email", with: user.email
     fill_in "sign_in_password", with: user.password
     click_button("Sign In")
@@ -14,6 +15,7 @@ describe "User" do
 
   it "can add item to list" do
     visit root_path
+    fill_in "sign_in_first_name", with: user.first_name
     fill_in "sign_in_email", with: user.email
     fill_in "sign_in_password", with: user.password
     click_button("Sign In")
@@ -25,6 +27,7 @@ describe "User" do
 
   it "can remove an item from a list" do
     visit root_path
+    fill_in "sign_in_first_name", with: user.first_name
     fill_in "sign_in_email", with: user.email
     fill_in "sign_in_password", with: user.password
     click_button("Sign In")

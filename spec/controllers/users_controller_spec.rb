@@ -32,7 +32,7 @@ describe UsersController do
 
   context "#sign_in" do
     it "signs in user with valid credentials" do
-      post :sign_in, user: {email: valid_user.email, password: valid_user.password}
+      post :sign_in, user: {first_name: valid_user.first_name, email: valid_user.email, password: valid_user.password}
       expect(session[:user_id]).to eq(valid_user.id)
     end
 

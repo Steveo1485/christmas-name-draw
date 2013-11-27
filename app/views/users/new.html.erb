@@ -26,6 +26,8 @@
 		<h3 class="sign_up_sign_in">Sign In</h1>
 
 		<%= form_for @sign_in_user, url: {action: "sign_in"} do |f| %>
+			<%= f.label "First Name" %><br/>
+			<%= f.text_field :first_name, class: "form_field", id: "sign_in_first_name" %><br/>
 			<%= f.label "Email" %><br/>
 			<%= f.text_field :email, class: "form_field", id: "sign_in_email" %><br/>
 			<%= f.label "Password" %><br/>
