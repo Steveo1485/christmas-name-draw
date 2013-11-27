@@ -1,0 +1,13 @@
+<h1>Update User Info</h1>
+
+<%= form_for @user, url: user_path, method: :put do |f| %>
+	<%= f.label "First Name" %><br/>
+	<%= f.text_field :first_name, class: "form_field" %><br/>
+	<%= f.label "Last Name" %><br/>
+	<%= f.text_field :last_name, class: "form_field"  %><br/>
+	<%= f.label "Email" %><br/>
+	<%= f.text_field :email, class: "form_field"  %><br/>
+	<%= f.label "Family Group" %><br/>
+	<%= f.select :family_group, ['Dragseth', 'King', 'Nugent/Lim/Saito'] %><br/>
+	<%= f.submit "Update Info", class: "form_button"%>
+<% end %>
