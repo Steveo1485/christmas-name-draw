@@ -37,7 +37,7 @@ describe UsersController do
     end
 
     it "does not sign in user with invalid credentials" do
-      post :sign_in, user: {email: valid_user.email, password: "foo"}
+      post :sign_in, user: {first_name: valid_user.first_name, email: valid_user.email, password: "foo"}
       expect(session[:user_id]).to eq(nil)
     end
   end
