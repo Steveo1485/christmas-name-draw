@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :email, :password, :family_group
+  attr_accessible :first_name, :last_name, :email, :password, :family_group, :paired_list_id
 
   has_one :list
 
