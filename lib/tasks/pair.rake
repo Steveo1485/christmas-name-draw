@@ -3,23 +3,33 @@ namespace :pairing do
   desc "Pair users with Christmas lists"
   task :pair_users => :environment do
     puts "Pairing Users with Christmas Lists"
-    User.all.each do |user|
-      until user.paired_list_id != nil
-        list = List.all[rand(List.all.length)]
-        if list.paired_user_id == nil && user.family_group != User.find(list.user_id).family_group
-          user.paired_list_id = list.id
-          user.save
-          list.paired_user_id = user.id
-          list.save
+    group1 = User.all.select { |user| user.family_group == "Nugent/Lim/Saito" }
+    group2 = User.all.select { |user| user.family_group != "Nugent/Lim/Saito" }
+
+    group1.each do |user|
+      group2_lists = group2.map { |user| user.list }
+      matched = false
+      until matched == true
+        list = group2_lists.sample
+        if list.paired_user_id == nil
+          user.update_attributes(paired_list_id: list.id)
+          list.update_attributes(paired_user_id: user.id)
+          matched = true
         end
       end
-    puts "*" * 60
-    puts "Users left:"
-    User.all.each do |user|
-      if user.paired_list_id == nil
-        puts "#{user.first_name} #{user.last_name}"
-      end
     end
+
+    group2.each do |user|
+      group1_lists = group1.map { |user| user.list }
+      matched = false
+      until matched == true
+        list = group1_lists.sample
+        if list.paired_user_id == nil
+          user.update_attributes(paired_list_id: list.id)
+          list.update_attributes(paired_user_id: user.id)
+          matched = true
+        end
+      end
     end
     puts "Pairing completed"
   end
