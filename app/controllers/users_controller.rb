@@ -18,7 +18,8 @@ class UsersController < ApplicationController
   end
 
   def sign_in
-    user = User.find_by_first_name(params[:user][:first_name])
+    sign_in_name = params[:user][:first_name].capitalize
+    user = User.find_by_first_name(sign_in_name)
     if user.email == params[:user][:email] && user.authenticate(params[:user][:password])
       session[:user_id] = user.id
       redirect_to user_lists_path(user.id)
