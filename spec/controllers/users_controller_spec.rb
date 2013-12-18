@@ -64,6 +64,11 @@ describe UsersController do
     response.status.should eq(200)
   end
 
+  it "#password" do
+    get :password, id: valid_user.id
+    response.status.should eq(200)
+  end
+
   context "#reset_password" do
     it "allows user to reset password with valid params" do
       old_password = valid_user.password_digest

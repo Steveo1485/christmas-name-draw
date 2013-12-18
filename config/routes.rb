@@ -6,6 +6,7 @@ ChristmasGiftExchange::Application.routes.draw do
       resources :items, only: [:create, :destroy]
     end
   end
+  get 'password', to: 'users#password'
   post 'sign_in', to: 'users#sign_in'
   post 'sign_out', to: 'users#sign_out'
   post 'reset_password', to: 'users#reset_password'

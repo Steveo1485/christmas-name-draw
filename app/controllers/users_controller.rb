@@ -48,6 +48,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def password
+    @user = User.find(params[:id])
+  end
+
   def reset_password
     user = User.find(params[:id])
     user.update_attributes(password: params[:user][:password])
