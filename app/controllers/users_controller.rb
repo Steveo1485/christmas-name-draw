@@ -47,5 +47,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+
+  def reset_password
+    user = User.find(params[:id])
+    user.update_attributes(password: params[:user][:password])
+    redirect_to user_path(user.id)
+  end
 end
 
