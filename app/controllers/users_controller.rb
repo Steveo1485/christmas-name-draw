@@ -49,13 +49,16 @@ class UsersController < ApplicationController
   end
 
   def password
-    @user = User.find(params[:id])
+    @user = User.new
   end
 
   def reset_password
-    user = User.find(params[:id])
-    user.update_attributes(password: params[:user][:password])
-    redirect_to user_path(user.id)
+    user = User.find_by_first_name(params[:user][:first_name])
+    if user.email == params[:user][:email] && params[:user][:password] == params[:user][:confirm_password]
+      user.password = params[:user][:password]
+      user.save
+      flash[:sign_in_error] = "Password updated! Please sign in."
+      redirect_to root_path
+    end
   end
 end
-

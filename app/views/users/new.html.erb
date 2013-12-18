@@ -35,5 +35,6 @@
 			<%= f.submit "Sign In", class: "form_button"%>
 		<% end %>
 		<span class="error_flash"><%= flash[:sign_in_error] %></span>
+		<p><%= link_to "Update Your Password", password_path %></p>
 	</div>
 </div>

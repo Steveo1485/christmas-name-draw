@@ -72,7 +72,7 @@ describe UsersController do
   context "#reset_password" do
     it "allows user to reset password with valid params" do
       old_password = valid_user.password_digest
-      put :reset_password, id: valid_user.id, user: { password: "bar"}
+      put :reset_password, user: { first_name: valid_user.first_name, email: valid_user.email, password: "bar", confirm_password: "bar"}
       expect(valid_user.password_digest).to_not eq(old_password)
     end
   end
