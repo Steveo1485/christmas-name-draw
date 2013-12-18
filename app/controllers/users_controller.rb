@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to user_lists_path(user.id)
     else
-      flash[:sign_in_error] = "Please try again."
+      flash[:sign_in_msg] = "Please try again."
       redirect_to root_path
     end
   end
@@ -47,5 +47,20 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
-end
 
+  def password
+    @user = User.new
+  end
+
+  def reset_password
+    user = User.find_by_first_name(params[:user][:first_name])
+    if user.email == params[:user][:email] && params[:user][:password] == params[:user][:confirm_password]
+      user.update_attributes(password: params[:user][:password] )
+      flash[:sign_in_msg] = "Password updated! Please sign in."
+      redirect_to root_path
+    else
+      flash[:reset_password_msg] = "Please try again."
+      redirect_to password_path
+    end
+  end
+end

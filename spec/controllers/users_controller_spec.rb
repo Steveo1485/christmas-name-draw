@@ -48,12 +48,12 @@ describe UsersController do
   end
 
   context "#update" do
-    it "doesn't a user with invalid params" do
+    it "updates a user with valid params" do
       put :update, id: valid_user.id, user: { first_name: "Steveo" }
       response.status.should eq(302)
     end
 
-    it "doesn't a user with invalid params" do
+    it "doesn't update a user with invalid params" do
       put :update, id: valid_user.id, user: { first_name: "" }
       expect(valid_user.first_name).to eq(valid_user.first_name)
     end
@@ -62,5 +62,18 @@ describe UsersController do
   it "#show" do
     get :show, id: valid_user.id
     response.status.should eq(200)
+  end
+
+  it "#password" do
+    get :password, id: valid_user.id
+    response.status.should eq(200)
+  end
+
+  context "#reset_password" do
+    it "allows user to reset password with valid params" do
+      old_password = valid_user.password_digest
+      put :reset_password, user: { first_name: valid_user.first_name, email: valid_user.email, password: "bar", confirm_password: "bar"}
+      expect(valid_user.password_digest).to_not eq(old_password)
+    end
   end
 end

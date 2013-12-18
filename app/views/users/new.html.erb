@@ -8,13 +8,13 @@
 
 		<%= form_for @new_user do |f| %>
 			<%= f.label "First Name" %><br/>
-			<%= f.text_field :first_name, class: "form_field" %><br/>
+			<%= f.text_field :first_name, class: "form_field", required: true %><br/>
 			<%= f.label "Last Name" %><br/>
-			<%= f.text_field :last_name, class: "form_field"  %><br/>
+			<%= f.text_field :last_name, class: "form_field", required: true  %><br/>
 			<%= f.label "Email" %><br/>
-			<%= f.text_field :email, class: "form_field"  %><br/>
+			<%= f.text_field :email, class: "form_field", required: true  %><br/>
 			<%= f.label "Password" %><br/>
-			<%= f.password_field :password, class: "form_field"  %><br/>
+			<%= f.password_field :password, class: "form_field", required: true  %><br/>
 			<%= f.label "Family Group" %><br/>
 			<%= f.select :family_group, ['Dragseth', 'King', 'Nugent/Lim/Saito'] %><br/>
 			<%= f.submit "Sign Up", class: "form_button"%>
@@ -27,13 +27,14 @@
 
 		<%= form_for @sign_in_user, url: {action: "sign_in"} do |f| %>
 			<%= f.label "First Name" %><br/>
-			<%= f.text_field :first_name, class: "form_field", id: "sign_in_first_name" %><br/>
+			<%= f.text_field :first_name, class: "form_field", id: "sign_in_first_name", required: true %><br/>
 			<%= f.label "Email" %><br/>
-			<%= f.text_field :email, class: "form_field", id: "sign_in_email" %><br/>
+			<%= f.text_field :email, class: "form_field", id: "sign_in_email", required: true %><br/>
 			<%= f.label "Password" %><br/>
-			<%= f.password_field :password, class: "form_field", id: "sign_in_password" %><br/>
+			<%= f.password_field :password, class: "form_field", id: "sign_in_password", required: true %><br/>
 			<%= f.submit "Sign In", class: "form_button"%>
 		<% end %>
-		<span class="error_flash"><%= flash[:sign_in_error] %></span>
+		<span class="error_flash"><%= flash[:sign_in_msg] %></span>
+		<p class="links"><%= link_to "Update Your Password", password_path %></p>
 	</div>
 </div>
