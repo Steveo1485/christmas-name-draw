@@ -3,6 +3,6 @@ class CountdownMailer < ActionMailer::Base
 
   def countdown(user)
     @user = user
-    mail(to: user.email, subject: "Did this work?!")
+    mail(to: user.email, subject: "Reminder from Family Christmas Name Draw")
   end
 end
