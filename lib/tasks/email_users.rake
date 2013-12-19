@@ -1,7 +1,7 @@
 namespace :email do
 
   desc "Email test user - countdown reminder"
-  task :countdown => :environment do
+  task :test_countdown => :environment do
     steven = User.find_by_first_name("Steven")
     puts "Sending Email"
     CountdownMailer.countdown(steven).deliver

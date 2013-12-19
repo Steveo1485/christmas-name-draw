@@ -1,5 +1,5 @@
 class CountdownMailer < ActionMailer::Base
-  default from: "stevennugent@gmail.com"
+  default from: ENV["EMAIL_ADDRESS"]
 
   def countdown(user)
     @user = user
