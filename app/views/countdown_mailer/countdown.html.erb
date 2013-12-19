@@ -1,0 +1,14 @@
+<p>Hey there, <%= @user.first_name %>!</p>
+
+<p>Just a friendly reminder from <%= link_to "http://christmas-name-draw.herokuapp.com", "http://christmas-name-draw.herokuapp.com" %>. Have you looked at <%= @user.paired_with %>'s list lately? Here's a quick reminder of their list just in case:
+
+<ul>
+	<% @user.paired_with_list.items.each do |item| %>
+		<li><%= item.item %></li>
+	<% end %>
+</ul>
+</p>
+
+<p>Have you forgotten your password? Don't worry! A password reset feature has been added. Click <%= link_to "here", "http://christmas-name-draw.herokuapp.com/password" %> to update your password.</p>
+
+<p>Enjoy this last week before Christmas!</p>
