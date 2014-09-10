@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe UsersController do
-  let!(:user) { User.new(first_name: "Steven", last_name: "Nugent", email: "steven@steven.com", password: "password", family_group: "Nugent/Lim/Saito")}
-  let!(:valid_user) { User.create(first_name: "Derek", last_name: "Dragseth", email: "derek@derek.com", password: "password", family_group: "Dragseth")}
+  let!(:user) { FactoryGirl.build(:user) }
+  let!(:valid_user) { FactoryGirl.create(:user, family_group: "Dragseth")}
 
   it "#new" do
     get :new

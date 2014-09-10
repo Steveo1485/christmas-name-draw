@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ListsController do
-  let!(:user) { User.create(first_name: "Steven", last_name: "Nugent", email: "steven@steven.com", password: "password", family_group: "Nugent/Lim/Saito")}
+  let!(:user) { FactoryGirl.create(:user) }
   let!(:list) { List.new(user_id: user.id)}
 
 
