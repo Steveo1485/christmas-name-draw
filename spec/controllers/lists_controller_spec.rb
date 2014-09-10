@@ -1,9 +1,8 @@
 require 'spec_helper'
 
 describe ListsController do
-  let!(:user) { User.create(first_name: "Steven", last_name: "Nugent", email: "steven@steven.com", password: "password", family_group: "Nugent/Lim/Saito")}
-  let!(:list) { List.new(user_id: user.id)}
-
+  let!(:user) { FactoryGirl.create(:user) }
+  let!(:list) { FactoryGirl.create(:list, user: user) }
 
   it "#index" do
     get :index, user_id: user.id
