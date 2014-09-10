@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe ItemsController do
   let!(:user) { FactoryGirl.create(:user) }
-  let!(:list) { FactoryGirl.create(:list, user: user)}
-  let!(:item) { Item.create(item: "Ninja Turtle", list_id: list.id)}
+  let!(:list) { FactoryGirl.create(:list, user: user) }
+  let!(:item) { FactoryGirl.create(:item, list: list) }
   
   context "#create" do
     it "creates a new item with valid params" do
