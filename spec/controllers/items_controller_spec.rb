@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe ItemsController do
   let!(:user) { FactoryGirl.create(:user) }
-  let!(:list) { List.create(user_id: user.id)}
+  let!(:list) { FactoryGirl.create(:list, user: user)}
   let!(:item) { Item.create(item: "Ninja Turtle", list_id: list.id)}
   
   context "#create" do
