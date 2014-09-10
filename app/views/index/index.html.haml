@@ -1,0 +1,23 @@
+%h1.text-center.main-title Christmas Family Name Draw
+
+.content
+  .col-sm-1.side
+  .col-sm-6.center-block
+    #intro-text
+      Placeholder for Intro Text
+  .col-sm-4.center-block
+    .index-form
+      %h3.text-center Sign In
+      = form_for @user do |f|
+        .form-group
+          = f.text_field :first_name, placeholder: "First Name", class: "form-control"
+        .form-group
+          = f.email_field :email, placeholder: "Email Address", class: "form-control"
+        .form-group
+          = f.password_field :password, placeholder: "Password", class: "form-control"
+        .form-group
+          = f.submit "Sign In", class: "form-control"
+    .index-form
+      %h3.text-center Reset Your Account
+      Placeholder for reset form
+  .col-sm-1.side
