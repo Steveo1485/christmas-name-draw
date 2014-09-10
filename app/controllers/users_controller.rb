@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < IndexController
 
   def new
     redirect_to user_lists_path(session[:user_id]) if session[:user_id]
