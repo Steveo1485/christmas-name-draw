@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class ItemsController < IndexController
 
   def create
     user = User.find(params[:user_id])

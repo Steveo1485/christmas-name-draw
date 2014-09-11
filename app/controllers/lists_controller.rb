@@ -1,4 +1,4 @@
-class ListsController < ApplicationController
+class ListsController < IndexController
 
   def index
     @user = User.find(params[:user_id])
